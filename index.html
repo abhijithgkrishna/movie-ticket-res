@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Ticket Reservation System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Book Your Movie Experience</h1>
+    </header>
+
+    <nav id="menu-bar">
+      <ul>
+        <li>
+          <a onclick="bookTicket()"> Book Ticket</a>
+        </li>
+        <li>
+          <a onclick="cancelTicket()">Cancel Ticket</a>
+        </li>
+        <li>
+          <a onclick="viewBookings()">View Bookings</a>
+        </li>
+        <li>
+          <a onclick="addMovie()">Add Movie</a>
+        </li>
+        <li>
+          <a onclick="addShow()">Add Show</a>
+        </li>
+        <li>
+          <a onclick="addTheater()">Add Theater</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="main-content">
+      <section id="show-listings">
+        <h2>Current Show Listings</h2>
+        <div class="row">
+          <!-- Movie Cards -->
+          <div class="col s12 m6 l4 movie-card">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">Movie Title</span>
+                <p>Theatre: TheatreA</p>
+                <p>Duration: 120mins</p>
+                <p>Rating: ★★★★☆</p>
+                <p>Seats Available: 10</p>
+                <p>Show Id : 1</p>
+              </div>
+            </div>
+          </div>
+          <!-- More movie cards... -->
+        </div>
+      </section>
+
+      <!-- Booking popup -->
+
+      <div id="booking-view-popup" class="popup">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Booking Details</span>
+            <div id="booking-data"><!-- Booking data will go here --></div>
+          </div>
+          <div class="card-action">
+            <button id="close-booking-view" onclick="closebooking()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="cancel-ticket-popup" class="popup">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Cancel Your Ticket</span>
+            <div class="input-field">
+              <input
+                type="number"
+                id="ticketId"
+                name="ticketId"
+                placeholder="Enter Ticket ID"
+              />
+            </div>
+          </div>
+          <div class="card-action">
+            <button onclick="submitCancellation()">Cancel Ticket</button>
+            <button onclick="closePopup()">Close</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking Popup -->
+      <div id="booking-popup" class="popup">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Book Your Ticket</span>
+            <div class="input-field">
+              <input type="text" id="name" name="name" placeholder="Name" />
+            </div>
+            <div class="input-field">
+              <input type="text" id="id" name="showid" placeholder="Show Id" />
+            </div>
+          </div>
+          <div class="card-action">
+            <button onclick="submitBooking()">Submit</button>
+            <button onclick="closePopup()">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cancel Ticket Popup -->
+      <div id="cancel-ticket-popup" class="popup">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Cancel Ticket</span>
+            <div class="input-field">
+              <label for="booking-id">Booking ID:</label>
+              <input type="text" id="booking-id" name="booking-id" required />
+            </div>
+          </div>
+          <div class="card-action">
+            <button onclick="submitCancellation()">Submit</button>
+            <button onclick="closeCancelPopup()">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Movie Popup -->
+
+      <div id="add-movie-popup" class="popup">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Add a New Movie</span>
+            <div class="input-field">
+              <input type="text" id="movieTitle" placeholder="Title" />
+            </div>
+            <div class="input-field">
+              <input
+                type="number"
+                id="movieDuration"
+                placeholder="Duration (minutes)"
+              />
+            </div>
+            <div class="input-field">
+              <input type="text" id="movieRating" placeholder="Rating" />
+            </div>
+          </div>
+          <div class="card-action">
+            <button onclick="submitMovie()">Submit</button>
+            <button onclick="closeMoviePopup()">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

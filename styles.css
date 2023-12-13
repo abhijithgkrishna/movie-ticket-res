@@ -1,0 +1,219 @@
+/* Color Palette Variables */
+:root {
+  --color-light-green: #c9cba3;
+  --color-light-orange: #ffe1a8;
+  --color-coral: #e26d5c;
+  --color-dark-purple: #723d46;
+  --color-dark-brown: #472d30;
+
+  --color-primary: var(--color-coral);
+  --color-secondary: var(--color-dark-purple);
+  --color-accent: var(--color-light-orange);
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-light-green);
+}
+
+/* Header Styles */
+header {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Navigation Bar Styles */
+#menu-bar {
+  background-color: var(--color-primary);
+  padding: 10px;
+}
+
+#menu-bar nav ul {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+#menu-bar nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+#menu-bar nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#menu-bar nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Styles */
+#main-content {
+  padding: 20px;
+}
+
+#booking-view-popup{
+  display: none;
+}
+#cancel-ticket-popup{
+  display: none;
+}
+#booking-popup{
+  display: none;
+}
+#cancel-ticket-popup{
+  display: none;
+}
+#add-movie-popup{
+  display: none;
+}
+
+.movie-card {
+  margin-bottom: 20px;
+}
+
+/* Card Styles */
+.card {
+    background-color: rgba(255, 255, 255, 0.75); /* Semi-transparent white */
+    border-radius: 30px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-action {
+  border-top: 1px solid #eee;
+  padding: 10px 15px;
+}
+
+/* Responsive Grid for Movies */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col {
+  padding: 0 15px;
+  flex: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .col {
+      flex-basis: 100%;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 992px) {
+  .col.m6 {
+      flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .col.l4 {
+      flex-basis: 33.33333%;
+  }
+}
+
+/* Popup Styles */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: flex;
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.popup .card {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 32px 0 rgba(150, 151, 170, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 50%; 
+  max-width: 500px; 
+  transform: translate(-50%, -50%);
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#booking-view-popup .card-action button, .popup .card-action button {
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#booking-view-popup .card-action button:hover, .popup .card-action button:hover {
+  background-color: darken(var(--color-primary), 10%);
+}
+
+#booking-data table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+#booking-data th, #booking-data td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#booking-data tr:nth-child(even) {
+  background-color: var(--color-accent);
+}
+
+#booking-data th {
+  background-color: var(--color-primary);
+  color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Additional styles as needed */
